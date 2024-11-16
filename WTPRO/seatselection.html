@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seat-Selection</title>
+    <style>
+        #cb,#cb1{
+            width:20px;
+            height: 20px;
+        }
+        #div-main{
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color:aqua;">
+    <h1 style="color: black;text-align: center;">select your favouite seats</h1>
+    <marquee>
+        <div style=" display: flex; align-items: center;text-align: center;color: blue;">
+        <h5>NOTE:</h5>
+        <span><p>first class Ticket price:$12 &emsp;&emsp;second class Ticket price:$8</p></span>
+        </div>
+    </marquee>
+    <div id="div-main">
+        <h3>First class</h3>
+        <div id="divf">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">&emsp;&emsp;&emsp;
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1"><br>
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">&emsp;&emsp;&emsp;
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1">
+            <input type="checkbox" id="cb1"><br>
+        </div>
+        <h3>Second class</h3>
+        <div id="divs">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">&emsp;&emsp;&emsp;
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb"><br>
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">&emsp;&emsp;&emsp;
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb"><br>
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">&emsp;&emsp;&emsp;
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb"><br>
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">&emsp;&emsp;&emsp;
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+            <input type="checkbox" id="cb">
+        </div><br>
+        <div style="text-align-last: center;">
+
+        <div style="align-items: center;">
+            <span><lable>No.of first class seats selected:</label></span><span><textarea type="number" id="inp1" size="2" placeholder="for ex-3"></textarea></span>
+        </div><br>
+        <div style="align-items: center;">
+            <span><label>No.of second class seats selected:</label></span><span><textarea type="number" id="inp" size="2" placeholder="for ex-4"></textarea></span>
+        </div><br>
+        <div style="align-items: center;">
+            <span><label>Total Amount:</label></span><span><textarea type="number" id="inpt" size="2" placeholder="$50"></textarea></span>
+        </div><br>
+        <button type="submit" onclick="displayWelcome()" style="background-color: lightcoral;color: black;width: 150px; height: 35px;">PAYMENT</button>
+        <br><br><div id="welcomeText" style="display:none;">You have successfully booked your movie tickets!!!</div><br>
+            <button type="submit" onclick="displayticket()"  id="newButton" style="display:none;">Download Tickets</button>
+    </div>
+    <script>
+        const category1Checkboxes = document.querySelectorAll('#cb1');
+        const category2Checkboxes = document.querySelectorAll('#cb');
+        const category1CountInput = document.getElementById('inp1');
+        const category2CountInput = document.getElementById('inp');
+        const totalCountInput = document.getElementById('inpt');
+
+        function updateCounts() {
+            const category1Count = document.querySelectorAll('#cb1:checked').length;
+            const category2Count = document.querySelectorAll('#cb:checked').length;
+            const total = category1Count*12 + category2Count*8;
+
+            category1CountInput.value = category1Count;
+            category2CountInput.value = category2Count;
+            totalCountInput.value ="$"+ total;
+        }
+
+        category1Checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateCounts);
+        });
+
+        category2Checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateCounts);
+        });
+        function displayWelcome() {
+            const welcomeText = document.getElementById('welcomeText');
+            welcomeText.style.display = 'block';
+            welcomeText.style.color='blue';
+            welcomeText.style.fontSize='30px';
+
+            const newButtonDiv = document.getElementById('newButton');
+            newButtonDiv.style.display = 'block';
+            newButtonDiv.style.color='black';
+            newButtonDiv.style.backgroundColor='lightcoral';
+            newButtonDiv.style.width='200px';
+            newButtonDiv.style.height='35px';
+            newButtonDiv.style.marginLeft='625px';
+            newButtonDiv.style.fontSize='15px'; 
+        }
+        function displayticket(){
+
+        }
+    </script>
+</body>
+</html>

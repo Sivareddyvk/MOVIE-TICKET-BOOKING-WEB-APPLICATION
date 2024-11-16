@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project cinetickethub</title>
+    <style>
+        #form-bg{
+            background-image: url('bookticketimg');
+            background-size:cover;
+            width:1200PX;
+            height: 500px;
+            text-align: center;
+        }
+        fieldset{
+            background-image: url('seatbook.jpeg');
+            opacity: 200;
+            background-size:100% 100%;
+            width:1200PX;
+            height: 500px;
+            text-align: center;
+            margin: 50PX;
+            margin-left: 150PX;
+            font-size: 25px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="form-bg">
+            <fieldset id="rectangle">
+                <legend style="background-color:white; color:black;">CINEMAS</legend>
+                <form>
+                <div id="formdiv"><h1 style="color: aliceblue;color:WHITE">SEAT REGISTRATION</h1><br><br>
+                <label for="hallname" name="hallname" style="color: white;">HALL NAME :</label>
+                <select>
+                    <option>PVR</option>
+                    <option>RAJA</option>
+                    <option>BABU</option>
+                    <option>PVR-k</option>
+                    <option>RAJA-v</option>
+                    <option>BABU-s</option>
+                    <option>PVR-m</option>
+                    <option>RAJA-a</option>
+                    <option>BABU-kv</option>
+                </select>&emsp;&emsp;&emsp;
+                <label for="date" name="date" style="color:white;">DATE :</label>
+                <input type="date" id="date">&emsp;&emsp;&emsp;
+                <label for="timings" name="timings" style="color: white;">SHOW TIMINGS :</label>
+                <select>
+                    <option>9AM</option>
+                    <option>12PM</option>
+                    <option>3PM</option>
+                    <option>6PM</option>
+                </select><br><br><br><br><br><br>
+                </div>
+            </form>
+            <div>
+                <a href="seatselection.html"><button style="height: 50px; width: 200px;font-size: 20px;">Book Your Seat</button></a>
+                </div>
+        </fieldset>
+    </div>
+    </body>
+</html>
